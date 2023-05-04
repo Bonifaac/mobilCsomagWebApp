@@ -1,0 +1,36 @@
+.contact-container{
+  height: 100px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #1c1919;
+  margin-top: 20px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.hr-div{
+  margin-top: 10px;
+  height: 10px;
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-hr{
+  border: 1px solid #a119b0;
+  margin-top: 25px;
+  width: 80%;
+}
+
+.contact-info{
+  margin-top: 30px;
+  height: 10px;
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

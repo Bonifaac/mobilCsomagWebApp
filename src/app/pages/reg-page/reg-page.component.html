@@ -1,0 +1,31 @@
+<span class="loading-indicator" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</span>
+<div class="loginContainer">
+  <form [formGroup]="regForm" class="loginMain" (ngSubmit)="onSubmit()">
+    <mat-form-field class="textInput" >
+      <mat-label for="userName">Felhasználónév</mat-label>
+      <input matInput type="text" formControlName="userName">
+    </mat-form-field>
+    <mat-form-field class="textInput" >
+      <mat-label for="name">Név</mat-label>
+      <input matInput type="text" formControlName="name"><br>
+    </mat-form-field>
+    <mat-form-field class="textInput" >
+      <mat-label for="email">E-mail</mat-label>
+      <input matInput type="email" formControlName="email" placeholder="email@szeged.hu"><br>
+    </mat-form-field>
+    <mat-form-field class="textInput" >
+      <mat-label for="password">Jelszó</mat-label>
+      <input matInput type="password" formControlName="password"><br>
+    </mat-form-field>
+    <mat-form-field class="textInput" >
+      <mat-label for="rePassword">Jelszó újra</mat-label>
+      <input matInput type="password" formControlName="rePassword"><br>
+    </mat-form-field>
+    <div class="buttonContainer">
+      <button mat-raised-button color="warn" class="button" (click)="goBack()">Vissza</button>
+      <button mat-raised-button color="primary" class="button" type="submit" (click)="signUp()">Regisztráció</button>
+    </div>
+  </form>
+</div>

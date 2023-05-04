@@ -1,0 +1,20 @@
+<span class="loading-indicator" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</span>
+
+<div class="loginContainer">
+  <div class="loginMain">
+    <mat-form-field class="textInput">
+      <mat-label for="userName">Felhasználónév</mat-label>
+      <input matInput type="text" [formControl]="userName">
+    </mat-form-field>
+    <mat-form-field class="textInput">
+      <mat-label for="password">Jelszó</mat-label>
+      <input matInput type="password" [formControl]="password">
+    </mat-form-field>
+    <div class="buttonContainer">
+      <button mat-raised-button color="primary" class="regButton" (click)="login()">Belépés</button>
+      <button mat-raised-button color="primary" class="logButton" [routerLink]="'/regPage'">Regisztráció</button>
+    </div>
+  </div>
+</div>

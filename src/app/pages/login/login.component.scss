@@ -1,0 +1,48 @@
+
+.loginContainer{
+  height: 100vh;
+  background-color: #a119b0;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.loginMain{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  height: 70%;
+  width: 500px;
+  border-radius: 20px;
+}
+
+.regButton{
+  cursor: pointer;
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.textInput{
+  border-radius: 10px;
+  width: 70%;
+}
+.logButton{
+  cursor: pointer;
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.buttonContainer{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+}
+

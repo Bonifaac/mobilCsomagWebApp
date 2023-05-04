@@ -1,0 +1,35 @@
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.menuElement{
+  float: right;
+}
+
+.webpageName{
+  float: left;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menuElement:hover {
+  background-color: #a119b0;
+}
+
+.loginButton{
+  display: block;
+  background-color: white;
+  text-align: center;
+  float: right;
+  border-radius: 10px;
+}
