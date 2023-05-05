@@ -3,9 +3,13 @@
     <mat-icon>home</mat-icon>
     <span>Főoldal</span>
   </a>
-  <a mat-list-item routerLink="/login" (click)="close()">
+  <a mat-list-item routerLink="/login" (click)="close()" *ngIf="!(loggedInUser)">
     <mat-icon>login</mat-icon>
     <span>Belépés</span>
+  </a>
+  <a mat-list-item routerLink="/login" (click)="close(true)" *ngIf="loggedInUser">
+    <mat-icon>login</mat-icon>
+    <span>Kilépés</span>
   </a>
   <a mat-list-item routerLink="/subscribe" (click)="close()">
     <mat-icon>login</mat-icon>
@@ -15,7 +19,7 @@
     <mat-icon>login</mat-icon>
     <span>Feltöltő kártyák</span>
   </a>
-  <a mat-list-item routerLink="/orders" (click)="close()">
+  <a mat-list-item routerLink="/orders" (click)="close()" *ngIf="loggedInUser">
     <mat-icon>login</mat-icon>
     <span>Rendelések</span>
   </a>

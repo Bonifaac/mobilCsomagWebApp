@@ -4,6 +4,8 @@ import {Router} from "@angular/router";
 import {Location} from "@angular/common";
 import {User} from "../../shared/models/User";
 import {LoadingService} from "../../shared/services/loading.service";
+import {AuthService} from "../../shared/services/auth.service";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 
 @Component({
@@ -23,20 +25,22 @@ export class RegPageComponent implements OnInit{
     name: ''
   });
 
-  constructor(private location : Location, private fb: FormBuilder, private loading: LoadingService, private router: Router) {
+  constructor(private location : Location, private fb: FormBuilder, private loading: LoadingService, private router: Router,
+              private authService: AuthService) {
   }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    if(this.regForm.valid){
-      if(this.regForm.get('userName') && this.regForm.get('email') &&
-        this.regForm.get('password') && this.regForm.get('rePassword') && this.regForm.get('name')
-      ){
-        console.log('valid');
-      }
-    }
+    console.log(this.regForm.value);
+    this.authService.signUp(<string>this.regForm.get('email')?.value, <string>this.regForm.get('password')?.value).then(cred=> {
+      console.log(cred);
+      this.router.navigateByUrl("/successReg");
+    }).catch(error => {
+      console.error(error)
+    });
+
   }
 
   createForm(model: User){

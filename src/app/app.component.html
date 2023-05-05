@@ -2,7 +2,7 @@
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
-    <app-menu (onCloseSidenav)="onClose($event, sidenav)"></app-menu>
+    <app-menu (onCloseSidenav)="onClose($event, sidenav)" [loggedInUser]="loggedInUser" (onLogOut)="logOut($event)"></app-menu>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -18,8 +18,9 @@
         <ul fxLayout fxLayoutGap="10px" class="navigationItems">
           <li><a routerLink="/subscribe">Előfizetések</a></li>
           <li><a routerLink="refill">Feltöltő kártyák</a></li>
-          <li><a routerLink="/orders">Rendelések</a></li>
-          <li><a routerLink="/login">Belépés</a></li>
+          <li *ngIf="loggedInUser"><a routerLink="/orders">Rendelések</a></li>
+          <li *ngIf="!(loggedInUser)"><a routerLink="/login">Belépés</a></li>
+          <li *ngIf="loggedInUser"><a routerLink="/login" (click)="logOut()">Kilépés</a></li>
         </ul>
       </div>
     </mat-toolbar>

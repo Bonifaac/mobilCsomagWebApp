@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mobilcsomagwebapp1": {
+      "hosting": {
+        "projekt": [
+          "mobilcsomagwebapp1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mobilcsomagwebapp1"
+  }
+}

@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {tryUnwrapForwardRef} from "@angular/compiler-cli/src/ngtsc/annotations/common";
 
 
 @Component({
@@ -11,6 +12,8 @@ export class MenuComponent implements OnInit, AfterViewInit{
   @Input() currentPage: string = '';
   @Output() selectedPage: EventEmitter<string> = new EventEmitter<string>();
   @Output() onCloseSidenav : EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input() loggedInUser?: firebase.default.User | null;
+  @Output() onLogOut: EventEmitter<boolean> = new EventEmitter();
 
   ngAfterViewInit() {
   }
@@ -18,7 +21,10 @@ export class MenuComponent implements OnInit, AfterViewInit{
   ngOnInit() {
   }
 
-  close(){
+  close(logout?: boolean){
+    if(logout === true){
+      this.onLogOut.emit(logout);
+    }
     this.onCloseSidenav.emit(true);
   }
 
