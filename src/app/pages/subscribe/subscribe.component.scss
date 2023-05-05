@@ -1,0 +1,71 @@
+.subscribeItemCardHolder{
+
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribeItemCard{
+  border-radius: 10px;
+  height: 400px;
+  width: 400px;
+  background-color: white;
+  margin: 15px;
+}
+
+@media (max-width: 300px) {
+  .subscribeItemCard{
+    height: 300px;
+    width: 100%;
+    margin: 5px;
+  }
+}
+.subscribeItemHeader{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  background-color: magenta;
+  height: 50%;
+}
+
+mat-card-title{
+  margin-bottom: 10px;
+}
+
+.subscribeItemContent{
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  background-color: #ffffff;
+}
+
+.subscribeItemContent > h1{
+  margin-top: 10px;
+  color: black;
+}
+
+.subscribeItemFooter{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  height: 20%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.subscribeItemFooter > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 2px;
+  height: 100%;
+  width: 100%;
+  background-color: magenta;
+}
+
+
+
+
