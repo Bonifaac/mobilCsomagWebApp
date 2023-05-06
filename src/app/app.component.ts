@@ -3,6 +3,8 @@ import {NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
 import {MatSidenav} from "@angular/material/sidenav";
 import {AuthService} from "./shared/services/auth.service";
+import {UserService} from "./shared/services/user.service";
+import {Users} from "./shared/models/Users";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
@@ -15,7 +17,7 @@ export class AppComponent implements OnInit {
   title: 'projekt';
   loggedInUser?: firebase.default.User | null;
 
-  constructor(private router: Router, private auth: AuthService) {
+  constructor(private router: Router, private auth: AuthService, private userS: UserService) {
 
   }
 
@@ -23,11 +25,11 @@ export class AppComponent implements OnInit {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((evts: any) => {
       this.page = (evts.urlAfterRedirects as string).split('/')[1] as string;
     });
-
     this.auth.isUserLoggedIn().subscribe(user => {
       console.log(user);
       this.loggedInUser = user;
       localStorage.setItem('user', JSON.stringify(this.loggedInUser));
+      localStorage.getItem('user');
     }, error => {
       console.error(error);
       localStorage.setItem('user', JSON.stringify('null'));

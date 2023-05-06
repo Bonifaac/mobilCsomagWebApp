@@ -1,5 +1,4 @@
 .subscribeItemCardHolder{
-
   justify-content: center;
   align-items: center;
 }
@@ -25,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: end;
-  background-color: magenta;
+  background-color: #7B1FA2;
   height: 50%;
 }
 
@@ -37,12 +36,12 @@ mat-card-title{
   display: flex;
   justify-content: center;
   height: 30%;
-  background-color: #ffffff;
+  background-color: #69F0AE;
 }
 
 .subscribeItemContent > h1{
   margin-top: 10px;
-  color: black;
+  color: #ffffff;
 }
 
 .subscribeItemFooter{
@@ -63,7 +62,7 @@ mat-card-title{
   border-width: 2px;
   height: 100%;
   width: 100%;
-  background-color: magenta;
+  background-color: #7B1FA2;
 }
 
 

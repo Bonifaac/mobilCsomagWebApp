@@ -6,6 +6,8 @@ import {User} from "../../shared/models/User";
 import {LoadingService} from "../../shared/services/loading.service";
 import {AuthService} from "../../shared/services/auth.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {Users} from "../../shared/models/Users";
+import {UserService} from "../../shared/services/user.service";
 
 
 @Component({
@@ -16,6 +18,7 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 export class RegPageComponent implements OnInit{
 
   isLoading: boolean = false;
+  user?: Users;
 
   regForm = this.createForm({
     email: '',
@@ -26,7 +29,7 @@ export class RegPageComponent implements OnInit{
   });
 
   constructor(private location : Location, private fb: FormBuilder, private loading: LoadingService, private router: Router,
-              private authService: AuthService) {
+              private authService: AuthService, private userS: UserService) {
   }
 
   ngOnInit(): void {
@@ -36,6 +39,17 @@ export class RegPageComponent implements OnInit{
     console.log(this.regForm.value);
     this.authService.signUp(<string>this.regForm.get('email')?.value, <string>this.regForm.get('password')?.value).then(cred=> {
       console.log(cred);
+      const user: Users ={
+        id: cred.user?.uid as string,
+        email: this.regForm.get('email')?.value as string,
+        username: this.regForm.get('userName')?.value as string,
+        name: this.regForm.get('name')?.value as string
+      };
+      this.userS.creat(user).then(_ =>{
+        console.log('User added successfully.');
+      }).catch(error => {
+        console.error(error);
+      });
       this.router.navigateByUrl("/successReg");
     }).catch(error => {
       console.error(error)

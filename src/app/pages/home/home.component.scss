@@ -38,6 +38,7 @@
 h1{
   color: black;
   margin-top: 30px;
+  font-weight: 1000;
   overflow: hidden;
 }
 h2{
@@ -49,7 +50,19 @@ h2{
 mat-icon{
   margin: 80px 40px 50px 40px;
   transform: scale(3);
-  color: #1c1919;
+  color: black;
+}
+
+#homeIcon1{
+  color: #0dda7d;
+}
+
+#homeIcon2{
+  color: goldenrod;
+}
+
+#homeIcon3{
+  color: royalblue;
 }
 
 .main-component{

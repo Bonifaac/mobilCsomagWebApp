@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  background-color: #303030;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .loading-indicator{
@@ -15,6 +18,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+a{
+  padding: 10px;
+}
+
+a:hover{
+  background-color: #69F0AE;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .loading-indicator::before{

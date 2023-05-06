@@ -13,11 +13,11 @@
           </mat-icon>
         </button>
       </div>
-      <div><a routerLink="/home">APPNAME</a></div>
+      <div><a routerLink="/home">Mobil Csomag WebApp</a></div>
       <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <ul fxLayout fxLayoutGap="10px" class="navigationItems">
-          <li><a routerLink="/subscribe">Előfizetések</a></li>
-          <li><a routerLink="refill">Feltöltő kártyák</a></li>
+          <li *ngIf="loggedInUser"><a routerLink="/subscribe">Előfizetések</a></li>
+          <li *ngIf="loggedInUser"><a routerLink="refill">Feltöltő kártyák</a></li>
           <li *ngIf="loggedInUser"><a routerLink="/orders">Rendelések</a></li>
           <li *ngIf="!(loggedInUser)"><a routerLink="/login">Belépés</a></li>
           <li *ngIf="loggedInUser"><a routerLink="/login" (click)="logOut()">Kilépés</a></li>

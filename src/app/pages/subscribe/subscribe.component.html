@@ -1,22 +1,22 @@
 <div fxLayout="row warp" fxLayout.xs="column" class="subscribeItemCardHolder">
-  <mat-card fxLayout="column" class="subscribeItemCard">
+  <mat-card fxLayout="column" class="subscribeItemCard" *ngFor="let plan of plans; let i = index;">
     <mat-card-header class="subscribeItemHeader">
       <mat-card-title>
-        CSOMAG NEV
+        {{plan.name}}
       </mat-card-title>
     </mat-card-header>
     <mat-card-content class="subscribeItemContent">
-      <h1>CSOMAG AR</h1>
+      <h1>{{plan.price}}</h1>
     </mat-card-content>
     <mat-card-footer class="subscribeItemFooter">
       <div style="border-bottom-left-radius: 10px;">
-        <span>NET</span>
+        <span>{{plan.net}}</span>
       </div>
       <div>
-        <span>HANG</span>
+        <span>{{plan.voice}}</span>
       </div>
       <div style="border-bottom-right-radius: 10px;">
-        <button mat-button>Megrendel</button>
+        <button mat-button (click)="sendOrder(plan.id)">Megrendel</button>
       </div>
     </mat-card-footer>
   </mat-card>

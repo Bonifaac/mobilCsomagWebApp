@@ -8,19 +8,19 @@
     <span>Belépés</span>
   </a>
   <a mat-list-item routerLink="/login" (click)="close(true)" *ngIf="loggedInUser">
-    <mat-icon>login</mat-icon>
+    <mat-icon>logout</mat-icon>
     <span>Kilépés</span>
   </a>
-  <a mat-list-item routerLink="/subscribe" (click)="close()">
-    <mat-icon>login</mat-icon>
+  <a mat-list-item routerLink="/subscribe" (click)="close()" *ngIf="loggedInUser">
+    <mat-icon>smartphone</mat-icon>
     <span>Előfizetések</span>
   </a>
-  <a mat-list-item routerLink="/refill" (click)="close()">
-    <mat-icon>login</mat-icon>
+  <a mat-list-item routerLink="/refill" (click)="close()" *ngIf="loggedInUser">
+    <mat-icon>redeem</mat-icon>
     <span>Feltöltő kártyák</span>
   </a>
   <a mat-list-item routerLink="/orders" (click)="close()" *ngIf="loggedInUser">
-    <mat-icon>login</mat-icon>
+    <mat-icon>list_alt</mat-icon>
     <span>Rendelések</span>
   </a>
 </mat-nav-list>
